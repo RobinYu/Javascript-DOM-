@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+</head>
+<script type="text/javascript">
+	window.onload=function () {
+	var para=document.getElementById('example');
+	alert(typeof para.nodeName);
+	alert(typeof para.style);
+	alert("the font family is"+para.style.fontFamily);	
+	};
+</script>
+<body>
+<p id="example" style="color:grey; font-family:'Arial',sans-serif;">
+	An example of a paragragh
+</p>
+</body>
+</html>
