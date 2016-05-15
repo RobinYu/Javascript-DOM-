@@ -78,3 +78,20 @@ article img {
     outline-width: .1em;
     outline-style: solid;
 }
+#slideshow{
+	width:150px;
+	height: 150px;
+	position: relative;
+	overflow:hidden;
+}
+#preview{
+	position:absolute;
+	border-width:0;
+	outline-width:0;
+}
+#frame{
+	position: absolute;
+	top: 0;
+	left:0;
+	z-index: 99;
+}
