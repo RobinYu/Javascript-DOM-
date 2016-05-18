@@ -2,7 +2,7 @@
  * @Author: robin
  * @Date:   2016-05-15 09:45:25
  * @Last Modified by:   robin
- * @Last Modified time: 2016-05-16 18:02:43
+ * @Last Modified time: 2016-05-17 21:44:13
  */
 function addLoadEvent(func) {
     var oldonload = window.onload;
@@ -129,7 +129,7 @@ function prepareSlideshow() {
     slideshow.appendChild(frame);
     var preview = document.createElement("img");
     preview.setAttribute("src", "E:/Sublime Project/Javascript-DOM-/10.2/images/slideshow.gif");
-    preview.setAttribute("alt", "blocks of web design");
+    preview.setAttributej("alt", "blocks of web design");
     preview.setAttribute("id", "preview");
     slideshow.appendChild(preview);
     insertAfter(slideshow, intro);
@@ -173,66 +173,92 @@ function focusLabels() {
 }
 
 function resetFields(whichform) {
-  for (var i=0; i<whichform.elements.length; i++) {
-    var element = whichform.elements[i];
-    if (element.type == "submit") continue;
-    if (!element.defaultValue) continue;
-    element.onfocus = function() {
-    if (this.value == this.defaultValue) {
-      this.value = "";
-     }
+    for (var i = 0; i < whichform.elements.length; i++) {
+        var element = whichform.elements[i];
+        if (element.type == "submit") continue;
+        if (!element.defaultValue) continue;
+        element.onfocus = function() {
+            if (this.value == this.defaultValue) {
+                this.value = "";
+            }
+        }
+        element.onblur = function() {
+            if (this.value == "") {
+                this.value = this.defaultValue;
+            }
+        };
     }
-    element.onblur = function() {
-      if (this.value == "") {
-        this.value = this.defaultValue;
-      }
-    };
-  }
 }
+
 function prepareForms() {
-  for (var i=0; i<document.forms.length; i++) {
-    var thisform = document.forms[i];
-    resetFields(thisform);
-    thisform.onsubmit = function() {
-      return validateForm(this);
+    for (var i = 0; i < document.forms.length; i++) {
+        var thisform = document.forms[i];
+        resetFields(thisform);
+        thisform.onsubmit = function() {
+            return validateForm(this);
+        }
     }
-  }
 }
 
 function validateForm(whichform) {
-  for (var i=0; i<whichform.elements.length; i++) {
-    var element = whichform.elements[i];
-    if (element.className.indexOf("required") != -1) {
-      if (!isFilled(element)) {
-        alert("Please fill in the "+element.name+" field.");
-        return false;
-      }
+    for (var i = 0; i < whichform.elements.length; i++) {
+        var element = whichform.elements[i];
+        if (element.className.indexOf("required") != -1) {
+            if (!isFilled(element)) {
+                alert("Please fill in the " + element.name + " field.");
+                return false;
+            }
+        }
+        if (element.className.indexOf("email") != -1) {
+            if (!isEmail(element)) {
+                alert("The " + element.name + " field must be a valid email address.");
+                return false;
+            }
+        }
     }
-    if (element.className.indexOf("email") != -1) {
-      if (!isEmail(element)) {
-        alert("The "+element.name+" field must be a valid email address.");
-        return false;
-      }
-    }
-  }
-  return true;
+    return true;
 }
 
 function isFilled(field) {
-  if (field.value.length < 1 || field.value == field.defaultValue) {
-    return false;
-  } else {
-    return true;
-  }
+    if (field.value.length < 1 || field.value == field.defaultValue) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function isEmail(field) {
-  if (field.value.indexOf("@") == -1 || field.value.indexOf(".") == -1) {
-    return false;
-  } else {
-    return true;
-  }
+    if (field.value.indexOf("@") == -1 || field.value.indexOf(".") == -1) {
+        return false;
+    } else {
+        return true;
+    }
 }
+
+function getHTTPObject() {
+    if (typeof XMLHttpRequest == "undefined")
+        XMLHttpRequest = function() {
+            try {
+                return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
+            try {
+                return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
+            try {
+                return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+            return false;
+        };
+    return new XMLHttpRequest();
+}
+
+function displayAjaxloading(element) {
+    while (element.hasChildNodes()) {
+        element.removeChild(element.lastChild);
+    }
+    var content = document.createElement("img");
+    content.setAttribute("src", "E:/Sublime Project/Javascript-DOM-/10.2/images/ajax-loader.gif");
+    content.setAttribute("alt", "Loading...");
+    element.appendChild(content);
+}
+
 addLoadEvent(prepareForms);
 addLoadEvent(prepareSlideshow);
 addLoadEvent(highlightPage);

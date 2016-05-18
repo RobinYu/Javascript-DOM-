@@ -1,97 +1,146 @@
-/*
-* @Author: robin
-* @Date:   2016-05-14 19:24:16
-* @Last Modified by:   robin
-* @Last Modified time: 2016-05-14 19:24:16
-*/
-
-section,
-header,
-article,
-nav {
-    display: block;
-}
-
-* {
-    padding: 0;
+*
+{
     margin: 0;
+    padding: 0;
 }
 
-body {
+body
+{
+    max-width: 80em;
     margin: 1em 10%;
+
     background-image: url(../images/background.gif);
+    background-repeat: repeat-x;
     background-attachment: fixed;
     background-position: top left;
-    background-repeat: repeat-x;
-    max-width: 80em;
 }
-
-header {
+#header
+{
+    border-width: .1em;
+    border-style: solid;
+    border-bottom-width: 0;
     background-image: url(../images/guitarist.gif);
     background-repeat: no-repeat;
     background-position: bottom right;
-    border-width: .1em;
-    border-style: solid;
-    border-bottom-width: 0;
 }
-
-header nav {
-    background-image: url(../images/navbar.gif);
-    background-position: bottom left;
-    background-repeat: repeat-x;
-    border-width: .1em;
-    border-style: solid;
-    border-bottom-width: 0;
-    border-top-width: 0;
+#navigation
+{
     padding-left: 10%;
-}
 
-header nav ul {
-    width: 100%;
+    border-width: .1em;
+    border-style: solid;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-image: url(../images/navbar.gif);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+}
+#navigation ul
+{
     overflow: hidden;
+
+    width: 100%;
+
     border-left-width: .1em;
     border-left-style: solid;
 }
-
-header nav li {
+#navigation li
+{
     display: inline;
 }
-
-header nav li a {
+#navigation li a
+{
     display: block;
     float: left;
+
     padding: .5em 2em;
+
     border-right: .1em solid;
 }
+#content
+{
+    line-height: 1.8em;
 
-article {
+    padding: 2em 10%;
+
     border-width: .1em;
     border-style: solid;
     border-top-width: 0;
-    padding: .5em 2em;
-    border-right: .1em solid;
 }
-
-article img {
-    border-style: .1em;
+#about #header
+{
+    background-image: url(../images/lineup.gif);
+}
+#photos #header
+{
+    background-image: url(../images/basshead.gif);
+}
+#live #header
+{
+    background-image: url(../images/bassist.gif);
+}
+#contact #header
+{
+    background-image: url(../images/drummer.gif);
+}
+#content img
+{
+    border-width: .1em;
     border-style: solid;
     outline-width: .1em;
     outline-style: solid;
 }
-#slideshow{
-	width:150px;
-	height: 150px;
-	position: relative;
-	overflow:hidden;
+#imagegallery li
+{
+    display: inline;
 }
-#preview{
-	position:absolute;
-	border-width:0;
-	outline-width:0;
+#slideshow
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 150px;
+    height: 150px;
 }
-#frame{
-	position: absolute;
-	top: 0;
-	left:0;
-	z-index: 99;
+img#frame
+{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+    border-width: 0;
+    outline-width: 0;
+}
+img#preview
+{
+    position: absolute;
+
+    border-width: 0;
+    outline-width: 0;
+}
+dl
+{
+    overflow: hidden;
+}
+dt
+{
+    float: left;
+}
+dd
+{
+    float: left;
+}
+label
+{
+    display: block;
+}
+fieldset
+{
+    border: 0;
+}
+td
+{
+    padding: .5em 3em;
 }

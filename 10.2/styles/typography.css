@@ -49,3 +49,9 @@ h3{
 textarea{
 	font-family: "Helvetica","Arial"sans-serif;
 }
+dt {
+	margin-left: 1em;
+}
+dd{
+	margin-right: 3em;
+}
