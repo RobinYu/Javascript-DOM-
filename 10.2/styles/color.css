@@ -1,84 +1,105 @@
-body {
-  color: #fb5;
-  background-color: #334;
+body
+{
+    color: #fb5;
+    background-color: #334;
 }
-a:link {
-  color: #445;
-  background-color: #eb6;
+a:link
+{
+    color: #445;
+    background-color: #eb6;
 }
-a:visited {
-  color: #345;
-  background-color: #eb6;
+a:visited
+{
+    color: #345;
+    background-color: #eb6;
 }
-a:hover {
-  color: #667;
-  background-color: #fb5;
+a:hover
+{
+    color: #667;
+    background-color: #fb5;
 }
-a:active {
-  color: #778;
-  background-color: #ec8;
+a:active
+{
+    color: #778;
+    background-color: #ec8;
 }
-#header {
-  color: #ec8;
-  background-color: #334;
-  border-color: #667;
+#header
+{
+    color: #ec8;
+    border-color: #667;
+    background-color: #334;
 }
-#navigation {
-  color: #455;
-  background-color: #789;
-  border-color: #667;
+#navigation
+{
+    color: #455;
+    border-color: #667;
+    background-color: #789;
 }
-#content {
-  color: #223;
-  background-color: #edc;
-  border-color: #667;
+#content
+{
+    color: #223;
+    border-color: #667;
+    background-color: #edc;
 }
-#navigation ul {
-  border-color: #99a;
+#navigation ul
+{
+    border-color: #99a;
 }
-#navigation a:link,#navigation a:visited {
-  color: #eef;
-  background-color: transparent;
-  border-color: #99a;
+#navigation a:link,
+#navigation a:visited
+{
+    color: #eef;
+    border-color: #99a;
+    background-color: transparent;
 }
-#navigation a:hover {
-  color: #445;
-  background-color: #eb6;
+#navigation a:hover
+{
+    color: #445;
+    background-color: #eb6;
 }
-#navigation a:active {
-  color: #667;
-  background-color: #ec8;
+#navigation a:active
+{
+    color: #667;
+    background-color: #ec8;
 }
 #navigation a.here:link,
 #navigation a.here:visited,
 #navigation a.here:hover,
-#navigation a.here:active {
-  color: #eef;
-  background-color: #799;
+#navigation a.here:active
+{
+    color: #eef;
+    background-color: #799;
 }
-#content img {
-  border-color: #ba9;
-  outline-color: #dcb;
+#content img
+{
+    border-color: #ba9;
+    outline-color: #dcb;
 }
-#imagegallery a {
-  background-color: transparent;
+#imagegallery a
+{
+    background-color: transparent;
 }
-th {
-  color: #edc;
-  background-color: #455;
+th
+{
+    color: #edc;
+    background-color: #455;
 }
-tr td {
-  color: #223;
-  background-color: #eb6;
+tr td
+{
+    color: #223;
+    background-color: #eb6;
 }
-tr.odd td {
-  color: #223;
-  background-color: #ec8;
+tr.odd td
+{
+    color: #223;
+    background-color: #ec8;
 }
-tr.highlight td {
-  color: #223;
-  background-color: #cba;
+tr.highlight td
+{
+    color: #223;
+    background-color: #cba;
 }
-input.placeholder{
-  color:grey;
+input.placeholder
+{
+    color: grey;
 }
